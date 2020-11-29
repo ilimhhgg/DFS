@@ -1,7 +1,7 @@
 html(lang="en")
   head
     meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="viewport", content="width=device-width,")
     link(rel="stylesheet", href="css/normalize.css")
     link(rel="stylesheet", href="css/style.css")
     link(rel="stylesheet", href="fonts/aller/ALLER.css")
@@ -13,13 +13,17 @@ body
         .header__conteiner
           .logo 
             img.logo__img(src="img/logo.png", alt="logo")
-          nav.nav
-            a.nav__item(href="#") HOME 
-            a.nav__item(href="#") SERVICE 
-            a.nav__item1(href="#") PORTFOLIO
-            a.nav__item(href="#") ABOUT
-            a.nav__item(href="#") BLOG
-            a.nav__item(href="#") CONTACT
+          input(type="checkbox" id="menu-checkbox")
+          nav(role="navigation")
+            label.toggle-button(for="menu-checkbox" data-open="MENU" data-close="CLOSE" onclick )
+            ul.main-menu
+                a.nav__item(href="#") HOME
+                a.nav__item(href="#") SERVICE 
+                a.nav__item(href="#") PORTFOLIO
+                a.nav__item(href="#") ABOUT     
+                a.nav__item(href="#") BLOG            
+                a.nav__item(href="#") CONTACT
+  
       .conteiner
         .slider.swiper-container
           .swiper-wrapper

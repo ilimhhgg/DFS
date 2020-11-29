@@ -150,7 +150,34 @@
   min-width: 100%;
 }
 
+a {
+  text-decoration: solid;
+}
+
 /*header*/
+ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.nav__item {
+  text-decoration: solid;
+  color: #d4d4d4;
+  font-weight: bold;
+  font-family: "Aller Bold";
+  font-weight: normal;
+  font-size: 12px;
+  padding: 0 20px;
+}
+
+#menu-checkbox {
+  display: none;
+}
+
+.nav__item:hover {
+  color: #86acc4;
+}
+
 .header {
   padding: 30px 0;
   background-color: #3a3d40;
@@ -163,6 +190,7 @@
   margin: 0 auto;
   display: flex;
   min-width: 960px;
+  justify-content: space-between;
 }
 
 .logo {
@@ -174,16 +202,6 @@
   align-items: center;
 }
 
-.nav__item {
-  width: 72px;
-  text-decoration: solid;
-  color: #d4d4d4;
-  font-weight: bold;
-  font-family: "Aller Bold";
-  font-weight: normal;
-  font-size: 12px;
-}
-
 .nav__item1 {
   width: 85px;
   text-decoration: solid;
@@ -191,6 +209,7 @@
   font-family: "Aller";
   font-size: 12px;
   font-weight: bold;
+  padding: 0 20px;
 }
 
 /*slider*/
@@ -602,22 +621,68 @@
     margin-left: 25px;
   }
 }
-@media screen and (min-width: 1800px) {
-  .conteiner {
-    max-width: 1460px;
-  }
-
-  .footer__con {
-    width: 1460px;
-  }
-}
 @media screen and (min-width: 930px) {
   .header__conteiner {
     width: 760px;
   }
+}
+@media screen and (max-width: 620px) {
+  .header-conteiner {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .main-menu {
+    display: none;
+  }
 
   .nav__item {
-    width: 52px;
+    width: 100%;
+    display: block;
+    font-size: 25px;
+    color: #000000;
+  }
+
+  .main-menu a {
+    padding: 8px;
+    display: block;
+  }
+
+  .toggle-button {
+    text-align: center;
+    display: block;
+    cursor: pointer;
+    color: black;
+    font-size: 30px;
+    font-family: "Aller Bold";
+  }
+
+  .toggle-button::after {
+    content: attr(data-open);
+    display: block;
+  }
+
+  #menu-checkbox:checked + nav[role=navigation] .main-menu {
+    display: block;
+  }
+
+  #menu-checkbox:checked + nav[role=navigation] .toggle-button:after {
+    content: attr(data-close);
+  }
+
+  .header-conteiner a {
+    margin-right: -65px;
+  }
+
+  .main-menu {
+    position: relative;
+  }
+
+  .main-menu {
+    position: relative;
+    top: 10px;
+    right: 100px;
   }
 }
 
